@@ -4,67 +4,64 @@ body {
     font-family: 'Open Sans', ;
 }
 
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: chocolate;
+}
+
+li {
+    float: left;
+}
+
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover, dropdown:hover .dropbtn {
+    background-color: tomato;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: teal;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px
+    skyblue;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: springgreen;
+    padding: 12px 16px;
+    text-decoration: none;ç
+    display: block;
+    text-aling: left;
+}
+
+.dropdown-content a:hover {
+    background-color: yellow;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
 /*.container {
     display: flex;
 }*/
 
-.nav {
-    width: 1200px;
-    margin-top: 30px auto;
-    margin-inline-start: 30px;
-    background-color: tomato;
-}
-
-.nav ul{
-    list-style: none;
-}
-
-.menu > li{
-    /*position: relative;*/
-    display: inline-block;
-}
-
-.menu > li > a{
-    display: block;
-    padding: 15px 20px;
-    border-radius: 30px;
-    font-family: 'Open Sans';
-    background-color: transparent;
-    border: 1px solid #ffffff;
-    width: 150px; 
-    height: 20px;
-    margin-left: 30px;
-    margin-right: 30px;
-    text-decoration: none;
-    color: white;
-}
-
-.menu li a:hover{
-    color: yellow;
-    transition: all .3s;
-}
-
-.buttomMenu {
-    position: absolute;
-    display: none;
-    width: 120%;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 1.5s;
-}
-
-.buttomMenu li a{
-    display: block;
-    padding: 15px;
-    background-color: transparent;
-    font-family: 'Open Sans';
-    text-decoration: none;
-    color: white;
-}
-
-.menu li:hover .buttomMenu {
-    visibility: visible;
-    opacity: 1;
 /*
 .butttoms { 
     float: right;
