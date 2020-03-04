@@ -14,8 +14,8 @@ import data from './data/pokemon/pokemon.js';
   }
 }*/
 
-function onChange(e){
-  let value = e.target.value
-  let nuevaListaFiltrada = data.pokemon.filter(p=>p.type.includes(value))
-}
+//function onChange(e){
+  //let value = e.target.value
+  let nuevaListaFiltrada = data.pokemon.filter(p=>p.type.includes(/*value*/'Fire'))
+//}
 console.log(nuevaListaFiltrada)

@@ -1,3 +1,3 @@
-import {dataPokemon} from './data.js';
+import {} from './data.js';
 
-console.log(dataPokemon());
+console.log();
