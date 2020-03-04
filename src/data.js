@@ -1,21 +1,18 @@
 import data from './data/pokemon/pokemon.js';
-
 // esta es una función de ejemplo
 //Mostrar la data
-export const dataPokemon= () => { 
-  //data.pokemon.filter((item) => item.id === Number);
+/*export const dataPokemon= () => { 
  return data.pokemon;
-};
-
+};*/
 //Filtración/orden
-for (let i=0; i<data.pokemon.length; i++){
+/*for (let i=0; i<data.pokemon.length; i++){
   let typePokemon=data.pokemon[i].type;
   for (let j=0; j<typePokemon.length;j++){
     if (typePokemon[j]==='Fire') {
       console.log(data.pokemon[i].name);
     }
   }
-}
+}*/
 
 function onChange(e){
   let value = e.target.value
