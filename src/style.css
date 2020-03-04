@@ -1,6 +1,6 @@
 body {
     background-color: brown;
-    font-family: 'Open Sans', ;
+    font-family: 'Open Sans';
 }
 
 ul {
@@ -46,7 +46,7 @@ li.dropdown {
     padding: 12px 16px;
     text-decoration: none;ç
     display: block;
-    text-aling: center;
+    text-align: center;
 }
 
 .dropdown-content a:hover {
