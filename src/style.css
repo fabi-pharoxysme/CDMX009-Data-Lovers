@@ -14,7 +14,6 @@ body {
     max-width: 1500px;
     height: 200px;
     background: #ffffff;
-    padding: 10px;
     margin: auto;
 /*Flex*/
     display: flex;
@@ -45,31 +44,36 @@ header nav {
 
 header nav a {
     background: black;
-    color: blue;
+    color: white;
     text-align: center;
     text-decoration: none;
     padding: 10px;
-    display: inline-block;
+    display: block;
+    font-family: 'Open Sans';
 /*Flex*/
     flex-grow: 1;
 }
 
 main {
     background-color: yellowgreen;
-    padding: 20px;
+    padding: 10px;
 /*Flex*/
     flex: 1 1 100%;
 }
 
-main section {
+main .dinamic {
      margin-bottom: 20px;
-     padding-bottom: 20px; 
+     padding-bottom: 20px;
+     content: ;
+/*Flex*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 5px;
 }
 
-
-
-li {
-    /*Hace que el menú este uno a lado de otro*/
+main section .bienvenida {
+    flex: 0 0 382px;
 }
 
 li a, .dropbtn {
@@ -93,6 +97,7 @@ li.dropdown {
     box-shadow: 0px 8px 16px 0px
     skyblue;
     z-index: 1;
+    position: absolute; /*Hizo que el menú multinivel apareciera vertical*/
 }
 
 li a div {
@@ -113,11 +118,32 @@ li a div {
     display: block;
 }
 
-
-/*
-.butttoms { 
-    float: right;
+footer {
+    width: 100%;
+    padding: 20px;
+    background: red;
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+    text-decoration: none;
 }
+
+@media screen and (max-width: 800px) {
+    .container {
+        flex-direction: column;
+    }
+    header {
+        flex-direction: column;
+        padding: 0;
+    }
+    header img {
+     margin: 20px 0;   
+    }
+    header nav {
+      width: 100%;  
+    }
+}
+/*
 .button {
     display: block;
     padding: 15px 20px;
