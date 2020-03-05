@@ -1,22 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-color: brown;
     font-family: 'Open Sans';
 }
 
+.container {
+    width: 90%;
+    max-width: 1300px;
+    height: 200px;
+    background: #ffffff;
+    padding: 10px;
+    margin: auto;
+/*Flex*/
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+header{
+    background-color: violet;
+    width: 100%;
+    padding: 20px;
+/*Flex*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+header .nav {
+    width: 50%;
+/*Flex*/
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+header .nav a {
+    background: black;
+    color: blue;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    display: inline-block;
+/*Flex*/
+    flex-grow: 1;
+}
+
 ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
     background-color: chocolate;
 }
 
 li {
-    float: right;
+    float: right; /*Hace que el menú este uno a lado de otro*/
 }
 
 li a, .dropbtn {
-    display: inline-block;
     color: white;
     text-align: center;
     padding: 14px 16px;
@@ -28,12 +74,10 @@ li a:hover, dropdown:hover .dropbtn {
 }
 
 li.dropdown {
-    display: inline-block;
 }
 /*cajas contenedoras de texto para tipos de pokemon*/
 .dropdown-content {
     display: none;
-    position: absolute;
     background-color: teal;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px
@@ -42,14 +86,13 @@ li.dropdown {
 }
 
 li a div {
-    float: inline-end;
 }
 /*texto para tipos de pokemon*/
 .dropdown-content a {
     color: springgreen;
     padding: 12px 16px;
-    text-decoration: none;ç
-    display: block;
+    text-decoration: none;
+    display: block; /*Hace de forma vertical el acomodo desplegable*/
     text-align: center;
 }
 
@@ -61,10 +104,6 @@ li a div {
     display: block;
 }
 
-.container {
-    justify-content: baseline;
-    align-items: center;
-}
 
 /*
 .butttoms { 
