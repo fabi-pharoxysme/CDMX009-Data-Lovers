@@ -18,4 +18,12 @@ import data from './data/pokemon/pokemon.js';
   //let value = e.target.value
   let nuevaListaFiltrada = data.pokemon.filter(p=>p.type.includes(/*value*/'Fire'))
 //}
+
+export const images = ()=> {
+  data.pokemon.forEach((item) => {
+    let image= document.createElement('img');
+    console.log(image);
+    console.log(item.img);
+  })
+}
 console.log(nuevaListaFiltrada)
