@@ -64,7 +64,6 @@ main {
 main .dinamic {
      margin-bottom: 20px;
      padding-bottom: 20px;
-     content: ;
 /*Flex*/
     display: flex;
     flex-wrap: wrap;
@@ -87,8 +86,6 @@ li a:hover, dropdown:hover .dropbtn {
     background-color: tomato;
 }
 
-li.dropdown {
-}
 /*cajas contenedoras de texto para tipos de pokemon*/
 .dropdown-content {
     display: none;
@@ -100,8 +97,6 @@ li.dropdown {
     position: absolute; /*Hizo que el menú multinivel apareciera vertical*/
 }
 
-li a div {
-}
 /*texto para tipos de pokemon*/
 .dropdown-content a {
     color: springgreen;
@@ -128,6 +123,11 @@ footer {
     text-decoration: none;
 }
 
+img {
+    width: 160px;
+    height: 160px;   
+}
+
 @media screen and (max-width: 800px) {
     .container {
         flex-direction: column;
@@ -143,6 +143,8 @@ footer {
       width: 100%;  
     }
 }
+
+
 /*
 .button {
     display: block;

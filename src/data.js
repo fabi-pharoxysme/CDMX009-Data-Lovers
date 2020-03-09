@@ -19,11 +19,19 @@ import data from './data/pokemon/pokemon.js';
   let nuevaListaFiltrada = data.pokemon.filter(p=>p.type.includes(/*value*/'Fire'))
 //}
 
+
+
 export const images = ()=> {
   data.pokemon.forEach((item) => {
-    let image= document.createElement('img');
-    console.log(image);
-    console.log(item.img);
+    let label= document.createElement('img');
+    let node= document.createTextNode(item.img);
+    // console.log(label);
+    // console.log(item.img);, label.textContent
+    label.appendChild(node);
+    document.getElementById("boxImages").appendChild(label);
   })
 }
-console.log(nuevaListaFiltrada)
+
+console.log(nuevaListaFiltrada);
+
+// `<img src="${node}" alt="${item.name}>`
