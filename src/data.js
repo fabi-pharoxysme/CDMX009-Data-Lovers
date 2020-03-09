@@ -23,12 +23,13 @@ import data from './data/pokemon/pokemon.js';
 
 export const images = ()=> {
   data.pokemon.forEach((item) => {
+    let img= document.createTextNode(item.img);
     let label= document.createElement('img');
-    let node= document.createTextNode(item.img);
+    label.src=img;
+    let node= label;
     // console.log(label);
     // console.log(item.img);, label.textContent
-    label.appendChild(node);
-    document.getElementById("boxImages").appendChild(label);
+    document.getElementById("boxImages").appendChild(node);
   })
 }
 
