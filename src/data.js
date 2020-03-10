@@ -4,7 +4,7 @@ import data from './data/pokemon/pokemon.js';
 /*export const dataPokemon= () => { 
  return data.pokemon;
 };*/
-//Filtración/orden
+//Filtración de tipo por un for 
 /*for (let i=0; i<data.pokemon.length; i++){
   let typePokemon=data.pokemon[i].type;
   for (let j=0; j<typePokemon.length;j++){
