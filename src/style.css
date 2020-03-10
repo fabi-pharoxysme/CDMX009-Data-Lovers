@@ -160,9 +160,6 @@ img {
       width: 100%;  
     }
 }
-#boxImages:nth-child(n+1):hover{
-    background-color: black;
-}
 
 .flex {
    width: 100%;
