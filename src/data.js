@@ -10,6 +10,7 @@ export const images = ()=> {
     let image= item.img;
     let label= document.createElement('img');
     let btn= document.createElement('button');
+    btn.className= ("btn-Images")
     btn.appendChild(label);
     label.src= image;
     let node= btn;
