@@ -10,6 +10,7 @@ let modalPokemon = document.querySelector(".modalPokemon")
   const images = dataPokemon.forEach((item) => {
     let image= item.img;
     let label= document.createElement('img');
+    label.className+=(item.id)
     let btn= document.createElement('button');
     btn.className+= ("btn-Images")
     btn.appendChild(label);
