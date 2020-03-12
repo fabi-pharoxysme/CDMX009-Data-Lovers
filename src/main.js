@@ -62,13 +62,15 @@ const modalPokemons= dataPokemon.forEach(poke=>{
     <span class="next-evolution> ${poke.next_evolution}</span>
     </div>`
 });
+
 let closeModalPokemon = document.querySelector(".closePokemon");
 closeModalPokemon.addEventListener('click',function(){
     modalPokemon.style.display = 'none';
 }); 
 
-let openModalPokemon = document.querySelector(".btn-Images")
-    openModalPokemon.addEventListener('click',function(){
-        modalPokemon.style.display = 'block'
-    });
-
+let openModalPokemon = document.querySelectorAll(".btn-Images")
+ let openModalPoke= openModalPokemon.forEach(openModalPoke=>{
+     openModalPoke.addEventListener('click',function(){
+         modalPokemon.style.display='block';
+     })
+ });
