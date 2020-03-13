@@ -219,6 +219,10 @@ img {
     cursor: pointer;
  }
 
+.btn-Images{
+    background-color: transparent;
+    
+}
 /*
 .button {
     display: block;

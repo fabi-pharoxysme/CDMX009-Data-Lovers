@@ -8,18 +8,18 @@ function onChange(e){
   let nuevaListaFiltrada = data.pokemon.filter(p=>p.type.includes(value))
 }
 //console.log(nuevaListaFiltrada)
-  
 
-/*export const images = data.pokemon.forEach((item) => {
-    let image= item.img;
-    let label= document.createElement('img');
-    let btn= document.createElement('button');
-    btn.className+= ("btn-Images")
-    btn.appendChild(label);
-    label.src= image;
-    let node= btn;
-    document.getElementById("boxImages").appendChild(node);
-  });*/
+//Orden por numero de Pokedex
+export let numberPokedex= 
+data.pokemon.sort((a, b)=>{
+  if(a.id< b.id){
+    return -1;
+  }
+  if (a.id> b.id){
+    return 1;
+  }
+});
+//console.log(numberPokedex)
 
 
-// `<img src="${node}" alt="${item.name}>`
+
