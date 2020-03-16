@@ -106,7 +106,6 @@ li a:hover, dropdown:hover .dropbtn {
 .dropdown-content {
     display: none;
     min-width: 160px;
-    skyblue;
     z-index: 1;
     position: absolute; /*Hizo que el menú multinivel apareciera vertical*/
 }
@@ -221,7 +220,11 @@ img {
 
 .btn-Images{
     background-color: transparent;
-    
+    border: transparent;
+}
+
+.nodo{
+    /* display: none; */
 }
 /*
 .button {

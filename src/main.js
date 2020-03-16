@@ -41,42 +41,40 @@ closeModal.addEventListener('click', function(){
     console.log(text);
    });*/
 
-//Modal de información
- const modalPokemons = () => {
-    dataPokemon.forEach( poke => {
-        let nodo= document.createElement('div');
-        nodo.innerHTML += `
-        <div class= "contenido-modal-pokemon">
-        <div class= " modal-header-pokemon">
-        <h3 class="num"> ${poke.num}</h3>
-        <h4 class= "name"> ${poke.name}</h4>
-        <span class= "closePokemon" id= "close"> &times; <span>
-        </div>
-        <div class= "modal-body-pokemon>
-        <div class= "img-contain"> <img class="img poke" src='${poke.img}' /> </div>
-        <p class="type"> Tipo: ${poke.type} </p>
-        <p class="weigth"> Peso: ${poke.weight}  Altura: ${poke.height} </p>
-        <p class="candy"> Dulces: ${poke.candy_count} ${poke.candy}</p>
-        <p class="egg"> Tipo de huevo: ${poke.egg}</p>
-        <p class="average spawn"> Frecuencia de aparición: ${poke.avg_spawns}</p>
-        </div>
-        <div class= "modal-footer-pokemon">
-        <h3 class= "evolutions"> Evoluciones </h3>
-        <p class="prev-evolution"> ${poke.prev_evolution}</p>
-        <span class="next-evolution> ${poke.next_evolution}</span>
-        </div>`;
-        let modalPokemon = document.querySelector("#modalPokemon");
-        modalPokemon.appendChild(nodo);
-        console.log('node', modalPokemon)
-    });
- }
+   let printInfo= dataPokemon.forEach( poke => {
+    let nodo= document.createElement('div');
+    nodo.className+= ("nodo");
+    nodo.innerHTML += `
+    <div class= "contenido-modal-pokemon">
+    <div class= " modal-header-pokemon">
+    <h3 class="num"> ${poke.num}</h3>
+    <h4 class= "name"> ${poke.name}</h4>
+    <span class= "closePokemon" id= "close"> &times; <span>
+    </div>
+    <div class= "modal-body-pokemon>
+    <div class= "img-contain"> <img class="img poke" src='${poke.img}' /> </div>
+    <p class="type"> Tipo: ${poke.type} </p>
+    <p class="weigth"> Peso: ${poke.weight}  Altura: ${poke.height} </p>
+    <p class="candy"> Dulces: ${poke.candy_count} ${poke.candy}</p>
+    <p class="egg"> Tipo de huevo: ${poke.egg}</p>
+    <p class="average spawn"> Frecuencia de aparición: ${poke.avg_spawns}</p>
+    </div>
+    <div class= "modal-footer-pokemon">
+    <h3 class= "evolutions"> Evoluciones </h3>
+    <p class="prev-evolution"> ${poke.prev_evolution}</p>
+    <span class="next-evolution> ${poke.next_evolution}</span>
+    </div>`;
+    let modalPokemon = document.querySelector("#modalPokemon");
+    modalPokemon.appendChild(nodo);
+})
 
 
- let openModalPokemon = document.querySelectorAll(".btn-Images");
-
- openModalPokemon.forEach( openModalPoke => {
-     openModalPoke.addEventListener('click', modalPokemons())
+   document.querySelector(".btn-Images").addEventListener('click', function(){
+        let show= printInfo;
+     document.querySelector(".contenido-modal-pokemon").style.display="block";
+     return show;
 });
+
 
 /* let closeModalPokemon = document.querySelector(".closePokemon");
      closeModalPokemon.addEventListener('click',function(){
