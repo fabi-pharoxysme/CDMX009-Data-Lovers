@@ -73,15 +73,19 @@ function btnImg(e){
 }
 document.querySelectorAll(".btn-Images").forEach(openModalPoke=>{
      openModalPoke.addEventListener('click',function(){
-        let info= document.querySelector(".nodo")
-        //    for (let i=0;i<info.length;i+=1){
-        //  info[i].style.display = 'block';}
-        info.style.display='block';})
- })
+        let info= document.querySelectorAll(".nodo")
+           for (let i=0;i<info.length;i+=1){
+         info[i].style.display = 'block';}
+        })
+});
 
 
- let closeModalPokemon = document.querySelector(".closePokemon");
-     closeModalPokemon.addEventListener('click',function(){
-        let info= document.querySelector(".nodo")
-        info.style.display = 'none';
-}); 
+ let closeModalPokemon = document.querySelectorAll(".closePokemon");
+     closeModalPokemon.forEach(closeModalPoke=>{
+      closeModalPoke.addEventListener('click',function(){
+        let info= document.querySelectorAll(".nodo")
+        for (let i=0;i<info.length;i+=1){
+            info[i].style.display = 'none';}
+           })
+     });
+    
