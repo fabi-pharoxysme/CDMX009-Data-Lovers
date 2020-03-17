@@ -1,4 +1,5 @@
 import {dataPokemon} from './data.js';
+import pokemon from './data/pokemon/pokemon.js';
 
 console.log();
 //Nodos 
@@ -66,17 +67,21 @@ closeModal.addEventListener('click', function(){
     </div>`;
     let modalPokemon = document.querySelector("#modalPokemon");
     modalPokemon.appendChild(nodo);
-})
-
-
-   document.querySelector(".btn-Images").addEventListener('click', function(){
-        let show= printInfo;
-     document.querySelector(".contenido-modal-pokemon").style.display="block";
-     return show;
 });
+function btnImg(e){
+    const a = e.target.classList;
+}
+document.querySelectorAll(".btn-Images").forEach(openModalPoke=>{
+     openModalPoke.addEventListener('click',function(){
+        let info= document.querySelector(".nodo")
+        //    for (let i=0;i<info.length;i+=1){
+        //  info[i].style.display = 'block';}
+        info.style.display='block';})
+ })
 
 
-/* let closeModalPokemon = document.querySelector(".closePokemon");
+ let closeModalPokemon = document.querySelector(".closePokemon");
      closeModalPokemon.addEventListener('click',function(){
-     modalPokemons().style.display = 'none';
-}); */
+        let info= document.querySelector(".nodo")
+        info.style.display = 'none';
+}); 

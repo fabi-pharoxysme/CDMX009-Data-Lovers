@@ -17,8 +17,8 @@ body {
 .container {
     background: linear-gradient(to right,#FF6950, #FF3050);
     width: 100%;
-    max-width: 1500px;
-    height: 150px;
+    max-width: 1500vw;
+    height: 150vh;
     /* background: #ffffff; */
     margin: auto;
 /*Flex*/
@@ -140,11 +140,11 @@ footer {
 }
 
 img {
-    width: 160px;
-    height: 160px;   
+    width: 160vw;
+    height: 160vh;   
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 10vw) {
     .container {
         flex-direction: column;
     }
@@ -224,7 +224,7 @@ img {
 }
 
 .nodo{
-    /* display: none; */
+    display: none;
 }
 /*
 .button {
