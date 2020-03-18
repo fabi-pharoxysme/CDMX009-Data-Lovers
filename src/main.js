@@ -41,8 +41,13 @@ closeModal.addEventListener('click', function(){
     let text = element.name;
     console.log(text);
    });*/
+   let select= document.querySelectorAll('.btn-Images');
 
-   let printInfo= dataPokemon.forEach( poke => {
+   select.forEach(pokebola=>{
+    pokebola.addEventListener('click', e=>printInfo(e));
+})
+
+   function printInfo(){ dataPokemon.forEach( poke => {
     let nodo= document.createElement('div');
     nodo.className+= ("nodo");
     nodo.innerHTML += `
@@ -66,26 +71,30 @@ closeModal.addEventListener('click', function(){
     <span class="next-evolution> ${poke.next_evolution}</span>
     </div>`;
     let modalPokemon = document.querySelector("#modalPokemon");
+    nodo.style.display="block";
     modalPokemon.appendChild(nodo);
 });
-function btnImg(e){
-    const a = e.target.classList;
 }
-document.querySelectorAll(".btn-Images").forEach(openModalPoke=>{
-     openModalPoke.addEventListener('click',function(){
-        let info= document.querySelectorAll(".nodo")
-           for (let i=0;i<info.length;i+=1){
-         info[i].style.display = 'block';}
-        })
-});
 
 
- let closeModalPokemon = document.querySelectorAll(".closePokemon");
-     closeModalPokemon.forEach(closeModalPoke=>{
-      closeModalPoke.addEventListener('click',function(){
-        let info= document.querySelectorAll(".nodo")
-        for (let i=0;i<info.length;i+=1){
-            info[i].style.display = 'none';}
-           })
-     });
+
+// document.querySelectorAll(".btn-Images").forEach(openModalPoke=>{
+//      openModalPoke.addEventListener('click',function(){
+//         let info= document.querySelectorAll(".nodo")
+//            info.forEach((info)=>{
+//                info.style.display= 'block';
+//            })
+//         })
+// });
+
+
+//  let closeModalPokemon = document.querySelectorAll(".closePokemon");
+//      closeModalPokemon.forEach(closeModalPoke=>{
+//       closeModalPoke.addEventListener('click',function(){
+//         let info= document.querySelectorAll(".nodo")
+//         info.forEach((info)=>{
+//             info.style.display='none';
+//         })
+//            })
+//      });
     
