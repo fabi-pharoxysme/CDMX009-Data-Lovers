@@ -1,5 +1,4 @@
 import {dataPokemon} from './data.js';
-import pokemon from './data/pokemon/pokemon.js';
 
 console.log();
 //Nodos 
