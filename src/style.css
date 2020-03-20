@@ -19,6 +19,7 @@ body {
     width: 100%;
     max-width: 1500vw;
     height: 150vh;
+    /* background: #ffffff; */
     margin: auto;
 /*Flex*/
     display: flex;
@@ -222,7 +223,7 @@ img {
     border: transparent;
 }
 
-.nodo{
+.modalPokemon{
     display: none;
 }
 /*
@@ -240,4 +241,3 @@ img {
     font-weight: bold;
     color: white;
 }*/
-
