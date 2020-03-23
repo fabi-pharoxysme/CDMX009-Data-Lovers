@@ -25,7 +25,7 @@ const images = dataPokemon.forEach((item) => {
 
      let btnImg= document.querySelectorAll('.btn-Images');
       btnImg.forEach(poke =>{ 
-        let a= poke.id
+        let a= poke.id -1;
         console.log(a)
         
         
