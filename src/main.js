@@ -9,7 +9,7 @@ let closeModal = document.querySelectorAll(".close");
 const images = dataPokemon.forEach((item) => {
      let image= item.img;
      let label= document.createElement('img');
-     label.className+=("a" +item.id)
+     label.id= ("a"+item.type)
      let btn= document.createElement('button');
      btn.className+= ("btn-Images")
      btn.id+= item.id
@@ -21,7 +21,7 @@ const images = dataPokemon.forEach((item) => {
 //Modal Información Pokemon   
 
      let btnImg = document.querySelectorAll('.btn-Images');
-     let Imgs = btnImg.id
+     let Imgs = document.querySelector('#a')
       btnImg.forEach(poke =>{ 
         let a = poke.id -1;
         
@@ -47,11 +47,13 @@ const images = dataPokemon.forEach((item) => {
           document.getElementById("modalPokemon").style.display = 'none';})
         }); 
       
- //Filtración  
-   let options= document.querySelector(".dropdown-content");
-    options.addEventListener('click',onChange)
-    function onChange(e){
-      let value = e.target.value
-      let nuevaListaFiltrada = dataPokemon.filter(p=>p.type.includes(value))
-     console.log(nuevaListaFiltrada)
+ //Filtración 
+      let options= document.querySelector(".dropdown-content");
+      options.addEventListener('click',onChange)
+     
+       function onChange(e){
+        let value = e.target.value
+        let nuevaListaFiltrada = dataPokemon.filter(p=>p.type.includes(value))
+         console.log(nuevaListaFiltrada)
    };
+   
