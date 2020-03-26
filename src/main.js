@@ -6,7 +6,7 @@ console.log();
 let closeModal = document.querySelectorAll(".close");
 
 //Mostrar imagenes pantalla principal
-const images = dataPokemon.forEach((item) => {
+  dataPokemon.forEach((item) => {
      let image= item.img;
      let label= document.createElement('img');
      label.id= ("a"+item.type)
@@ -48,12 +48,14 @@ const images = dataPokemon.forEach((item) => {
         }); 
       
  //Filtración 
+      let print = document.getElementById("boxImages");
       let options= document.querySelector(".dropdown-content");
       options.addEventListener('click',onChange)
      
        function onChange(e){
         let value = e.target.value
         let nuevaListaFiltrada = dataPokemon.filter(p=>p.type.includes(value))
-         console.log(nuevaListaFiltrada)
-   };
+        console.log(nuevaListaFiltrada)
+        print.innerHTML = nuevaListaFiltrada
+      };
    
