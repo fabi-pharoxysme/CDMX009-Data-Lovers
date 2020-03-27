@@ -6,7 +6,7 @@ console.log();
 let closeModal = document.querySelectorAll(".close");
 
 //Mostrar imagenes pantalla principal
-const images = dataPokemon.forEach((item) => {
+  dataPokemon.forEach((item) => {
      let image= item.img;
      let label= document.createElement('img');
      label.id= ("a")
@@ -47,6 +47,7 @@ const images = dataPokemon.forEach((item) => {
           document.getElementById("modalPokemon").style.display = 'none';})
         }); 
       
+<<<<<<< HEAD
  //Filtración
 let options= document.querySelector(".dropdown-content");
 let cont= document.querySelector("#boxImages");
@@ -65,3 +66,17 @@ options.addEventListener('click', (e)=>{
 
 
    
+=======
+ //Filtración 
+      let print = document.getElementById("boxImages");
+      let options= document.querySelector(".dropdown-content");
+      options.addEventListener('click',onChange)
+     
+       function onChange(e){
+        let value = e.target.value
+        let nuevaListaFiltrada = dataPokemon.filter(p=>p.type.includes(value))
+        console.log(nuevaListaFiltrada)
+        print.innerHTML = nuevaListaFiltrada
+      };
+   
+>>>>>>> 1ce6bddc2c888f23f190eeb822545c1b3e8aa95c
