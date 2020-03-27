@@ -52,7 +52,8 @@ btnImg.forEach(poke =>{
       
  //Filtración
 let options= document.getElementsByClassName("options");
-console.log(option)
+let val= Object.keys(options/*[0]*/);
+console.log(val);
 let principalImg = document.querySelectorAll(".Imgns")
 options.addEventListener('click', (e)=>{
   let value= e.target.value;
