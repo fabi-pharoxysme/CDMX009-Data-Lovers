@@ -1,82 +1,75 @@
 import {dataPokemon} from './data.js';
 
-
-console.log();
 //Nodos 
 let closeModal = document.querySelectorAll(".close");
 
 //Mostrar imagenes pantalla principal
-  dataPokemon.forEach((item) => {
-     let image= item.img;
-     let label= document.createElement('img');
-     label.id= ("a")
-     let btn= document.createElement('button');
-     btn.className+= ("btn-Images")
-     btn.id+= item.id
-     btn.appendChild(label);
-     label.src= image;
-     let node= btn;
-     document.getElementById("boxImages").appendChild(node);
+
+const images = (data) => {
+ data.forEach(item =>{
+    let image= item.img;
+    let label= document.createElement('img');
+    label.className += ("Imgns")
+    label.id= item.id
+    let btn= document.createElement('button');
+    btn.className+= ("btn-Images")
+    btn.id+= item.id
+    btn.appendChild(label);
+    label.src= image;
+    let node= btn;
+    document.getElementById("boxImages").appendChild(node);
   });
+  
+} 
+images(dataPokemon)
 //Modal Información Pokemon   
 
-     let btnImg = document.querySelectorAll('.btn-Images');
-     let Imgs = document.querySelector('#a')
-      btnImg.forEach(poke =>{ 
-        let a = poke.id -1;
+let btnImg = document.querySelectorAll('.btn-Images');
+btnImg.forEach(poke =>{ 
+  let a = poke.id -1;
         
-            const showData = () => {
+    const showData = () => {
             
-             document.getElementById("modalPokemon").style.display="block";
-             let container= document.getElementById("contentInfo");
-             document.createElement('div');
-             container.innerHTML=`
-             <h3 class="num"> ${dataPokemon[a].num}</h3>
-             <h4 class= "name"> ${dataPokemon[a].name}</h4>
-             <div class= "img-contain"> <img class="img poke" src='${dataPokemon[a].img}' /> </div>
-             <p class="type"> Tipo: ${dataPokemon[a].type} </p>
-             <p class="weigth"> Peso: ${dataPokemon[a].weight}  Altura: ${dataPokemon[a].height} </p>
-             <p class="candy"> Dulces: ${dataPokemon[a].candy_count} ${dataPokemon[a].candy}</p>
-             <p class="egg"> Tipo de huevo: ${dataPokemon[a].egg}</p>
-             <p class="average spawn"> Frecuencia de aparición: ${dataPokemon[a].avg_spawns}</p>`
-            }
-         poke.addEventListener('click',showData)          
-        });                  
-     closeModal.forEach(closeModalPoke=>{
-      closeModalPoke.addEventListener('click',function(){
-          document.getElementById("modalPokemon").style.display = 'none';})
-        }); 
+      document.getElementById("modalPokemon").style.display="block";
+      let container= document.getElementById("contentInfo");
+      document.createElement('div');
+      container.innerHTML=`
+      <h3 class="num"> ${dataPokemon[a].num}</h3>
+      <h4 class= "name"> ${dataPokemon[a].name}</h4>
+      <div class= "img-contain"> <img class="img poke" src='${dataPokemon[a].img}' /> </div>
+      <p class="type"> Tipo: ${dataPokemon[a].type} </p>
+      <p class="weigth"> Peso: ${dataPokemon[a].weight}  Altura: ${dataPokemon[a].height} </p>
+      <p class="candy"> Dulces: ${dataPokemon[a].candy_count} ${dataPokemon[a].candy}</p>
+      <p class="egg"> Tipo de huevo: ${dataPokemon[a].egg}</p>
+      <p class="average spawn"> Frecuencia de aparición: ${dataPokemon[a].avg_spawns}</p>`
+    }
+    poke.addEventListener('click',showData)          
+  });                
+  closeModal.forEach(closeModalPoke=>{
+    closeModalPoke.addEventListener('click',function(){
+      document.getElementById("modalPokemon").style.display = 'none';})
+    }); 
       
-<<<<<<< HEAD
  //Filtración
-let options= document.querySelector(".dropdown-content");
-let cont= document.querySelector("#boxImages");
-document.getElementById("a").style.display="none";
+let options= document.getElementsByClassName("options");
+console.log(option)
+let principalImg = document.querySelectorAll(".Imgns")
 options.addEventListener('click', (e)=>{
   let value= e.target.value;
   let newList= dataPokemon.filter(p=>p.type.includes(value));
-  newList.forEach((item)=>{
-    let image= item.img;
-     let label= document.createElement('img');
-     label.src= image;
-     cont.appendChild(label);
+  console.log(newList)
+  // newList.forEach((item)=>{
+  //   let imageid= item.id 
+  //        console.log(imageid)
+  //  })
+  
+    
+    //  let label= document.createElement('img');
+    //  label.src= image;
+    //  cont.appendChild(label);
   })
   // newList.forEach((item))
-})
+// })
 
 
    
-=======
- //Filtración 
-      let print = document.getElementById("boxImages");
-      let options= document.querySelector(".dropdown-content");
-      options.addEventListener('click',onChange)
-     
-       function onChange(e){
-        let value = e.target.value
-        let nuevaListaFiltrada = dataPokemon.filter(p=>p.type.includes(value))
-        console.log(nuevaListaFiltrada)
-        print.innerHTML = nuevaListaFiltrada
-      };
-   
->>>>>>> 1ce6bddc2c888f23f190eeb822545c1b3e8aa95c
