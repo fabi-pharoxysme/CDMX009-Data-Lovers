@@ -111,7 +111,7 @@ li a:hover, dropdown:hover .dropbtn {
 }
 
 /*texto para tipos de pokemon*/
-.dropdown-content a {
+.dropdown-content {
     background-color: #ffffff;
     color:#FF3050;
     border-radius: 0px;
@@ -120,12 +120,12 @@ li a:hover, dropdown:hover .dropbtn {
     text-align: center;
 }
 
-.dropdown-content a:hover {
+.dropdown-content:hover {
     color: #ffffff;
     background-color:#FF6950;
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown:hover {
     display: block;
 }
 
