@@ -1,4 +1,4 @@
-import {dataPokemon} from './data.js';
+import {dataPokemon, newList} from './data.js';
 
 //Nodos 
 let closeModal = document.querySelectorAll(".close");
@@ -6,13 +6,13 @@ let closeModal = document.querySelectorAll(".close");
 //Mostrar imagenes pantalla principal
 
 const images = (data) => {
- data.forEach(item =>{
+  return data.forEach(item =>{
     let image= item.img;
     let label= document.createElement('img');
-    label.className += ("Imgns")
+    label.classList.add ("Imgns")
     label.id= item.id
     let btn= document.createElement('button');
-    btn.className+= ("btn-Images")
+    btn.classList.add ("btn-Images")
     btn.id+= item.id
     btn.appendChild(label);
     label.src= image;
@@ -22,6 +22,7 @@ const images = (data) => {
   
 } 
 images(dataPokemon)
+
 //Modal Información Pokemon   
 
 let btnImg = document.querySelectorAll('.btn-Images');
@@ -51,26 +52,9 @@ btnImg.forEach(poke =>{
     }); 
       
  //Filtración
-let options= document.getElementsByClassName("options");
-let val= Object.keys(options/*[0]*/);
-console.log(val);
-let principalImg = document.querySelectorAll(".Imgns")
+let options= document.querySelector(".dropdown-content");
 options.addEventListener('click', (e)=>{
-  let value= e.target.value;
-  let newList= dataPokemon.filter(p=>p.type.includes(value));
-  console.log(newList)
-  // newList.forEach((item)=>{
-  //   let imageid= item.id 
-  //        console.log(imageid)
-  //  })
-  
-    
-    //  let label= document.createElement('img');
-    //  label.src= image;
-    //  cont.appendChild(label);
-  })
-  // newList.forEach((item))
-// })
-
-
+   let value= e.target.value;
+ images(newList(dataPokemon,value));
+  });
    
