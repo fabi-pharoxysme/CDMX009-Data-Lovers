@@ -2,7 +2,7 @@ import {dataPokemon, newList} from './data.js';
 
 //Nodos 
 let closeModal = document.querySelectorAll(".close");
-
+let contentImages = document.querySelector("#boxImages")
 //Mostrar imagenes pantalla principal
 
 const images = (data) => {
@@ -17,32 +17,32 @@ const images = (data) => {
     btn.appendChild(label);
     label.src= image;
     let node= btn;
-    document.getElementById("boxImages").appendChild(node);
+    contentImages.appendChild(node);
   });
   
 } 
-images(dataPokemon)
+images(dataPokemon);
 
 //Modal Información Pokemon   
 
 let btnImg = document.querySelectorAll('.btn-Images');
-btnImg.forEach(poke =>{ 
+function printModal (pokemon) {
+  btnImg.forEach(poke =>{ 
   let a = poke.id -1;
         
-    const showData = () => {
-            
+    const showData = () => {     
       document.getElementById("modalPokemon").style.display="block";
       let container= document.getElementById("contentInfo");
       document.createElement('div');
       container.innerHTML=`
-      <h3 class="num"> ${dataPokemon[a].num}</h3>
-      <h4 class= "name"> ${dataPokemon[a].name}</h4>
-      <div class= "img-contain"> <img class="img poke" src='${dataPokemon[a].img}' /> </div>
-      <p class="type"> Tipo: ${dataPokemon[a].type} </p>
-      <p class="weigth"> Peso: ${dataPokemon[a].weight}  Altura: ${dataPokemon[a].height} </p>
-      <p class="candy"> Dulces: ${dataPokemon[a].candy_count} ${dataPokemon[a].candy}</p>
-      <p class="egg"> Tipo de huevo: ${dataPokemon[a].egg}</p>
-      <p class="average spawn"> Frecuencia de aparición: ${dataPokemon[a].avg_spawns}</p>`
+      <h3 class="num"> ${pokemon[a].num}</h3>
+      <h4 class= "name"> ${pokemon[a].name}</h4>
+      <div class= "img-contain"> <img class="img poke" src='${pokemon[a].img}' /> </div>
+      <p class="type"> Tipo: ${pokemon[a].type} </p>
+      <p class="weigth"> Peso: ${pokemon[a].weight}  Altura: ${pokemon[a].height} </p>
+      <p class="candy"> Dulces: ${pokemon[a].candy_count} ${pokemon[a].candy}</p>
+      <p class="egg"> Tipo de huevo: ${pokemon[a].egg}</p>
+      <p class="average spawn"> Frecuencia de aparición: ${pokemon[a].avg_spawns}</p>`
     }
     poke.addEventListener('click',showData)          
   });                
@@ -50,11 +50,14 @@ btnImg.forEach(poke =>{
     closeModalPoke.addEventListener('click',function(){
       document.getElementById("modalPokemon").style.display = 'none';})
     }); 
-      
+  };   
+  printModal(dataPokemon);
  //Filtración
 let options= document.querySelector(".dropdown-content");
 options.addEventListener('click', (e)=>{
    let value= e.target.value;
- images(newList(dataPokemon,value));
-  });
-   
+   let dataFilter = newList(dataPokemon,value)
+   contentImages.innerHTML = '';
+ contentImages.appendChild(images(dataFilter));
+ console.log(printModal(newList(dataFilter)));
+ });
