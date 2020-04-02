@@ -2,7 +2,7 @@ import {dataPokemon, newList} from './data.js';
 
 //Nodos 
 let closeModal = document.querySelectorAll(".close");
-let contentImages = document.querySelector("#boxImages")
+let contentImages = document.querySelector("#boxImages");
 //Mostrar imagenes pantalla principal
 
 const images = (data) => {
@@ -25,12 +25,14 @@ images(dataPokemon);
 
 //Modal Información Pokemon   
 
-let btnImg = document.querySelectorAll('.btn-Images');
+// let btnImg = document.querySelectorAll('.btn-Images');
 function printModal (pokemon) {
+  let btnImg = document.querySelectorAll('button');
   btnImg.forEach(poke =>{ 
-  let a = poke.id -1;
+  let a = poke.id -1
         
-    const showData = () => {     
+    const showData = () => {
+     
       document.getElementById("modalPokemon").style.display="block";
       let container= document.getElementById("contentInfo");
       document.createElement('div');
@@ -58,6 +60,6 @@ options.addEventListener('click', (e)=>{
    let value= e.target.value;
    let dataFilter = newList(dataPokemon,value)
    contentImages.innerHTML = '';
- contentImages.appendChild(images(dataFilter));
- console.log(printModal(newList(dataFilter)));
- });
+   images(dataFilter);
+   printModal(dataFilter);
+  });
